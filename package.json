@@ -11,6 +11,7 @@
     "dev": "npm run dev --workspace=apps/web",
     "dev:backend": "npm run start:dev --workspace=apps/backend",
     "dev:web": "npm run dev --workspace=apps/web",
+    "db:init": "npm run db:init --workspace=apps/backend",
     "build": "npm run build --workspaces",
     "lint": "npm run lint --workspaces",
     "test": "npm run test --workspaces"

@@ -9,6 +9,9 @@ import { BaiTapEntity } from '../entities/bai-tap.entity';
 
 async function seed(): Promise<void> {
   const dataSource: DataSource = await AppDataSource.initialize();
+  // Ensure tables and indexes are created if they do not exist
+  await dataSource.synchronize();
+
   const queryRunner = dataSource.createQueryRunner();
   await queryRunner.connect();
   await queryRunner.startTransaction();

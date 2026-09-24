@@ -42,6 +42,7 @@ const tro_choi_entity_1 = require("../entities/tro-choi.entity");
 const bai_tap_entity_1 = require("../entities/bai-tap.entity");
 async function seed() {
     const dataSource = await data_source_1.AppDataSource.initialize();
+    await dataSource.synchronize();
     const queryRunner = dataSource.createQueryRunner();
     await queryRunner.connect();
     await queryRunner.startTransaction();
